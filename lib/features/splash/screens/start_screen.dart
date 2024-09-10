@@ -23,7 +23,7 @@ class _StartScreenState extends State<StartScreen> {
             Text(
               'BEE.AI',
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: Theme.of(context).textTheme,
+                    color: Theme.of(context).textTheme.headline6?.color,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -33,7 +33,7 @@ class _StartScreenState extends State<StartScreen> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor, 
-                foregroundColor: Theme.of(context).textTheme, 
+                foregroundColor: Theme.of(context).textTheme.button?.color, 
               ),
               child: Text('ENTRAR'),
             ),
