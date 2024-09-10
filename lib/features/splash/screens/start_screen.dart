@@ -10,7 +10,7 @@ class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomTheme.backgroundColor, 
+      backgroundColor: Theme.of(context).backgroundColor, 
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
