@@ -1,0 +1,1 @@
+ /home/giovane/viverlocal/corre_aqui/corre_aqui_app/.dart_tool/flutter_gen/gen_l10n/app_localizations_en.dart /home/giovane/viverlocal/corre_aqui/corre_aqui_app/.dart_tool/flutter_gen/gen_l10n/app_localizations.dart:  /home/giovane/viverlocal/corre_aqui/corre_aqui_app/l10n.yaml /home/giovane/viverlocal/corre_aqui/corre_aqui_app/lib/src/localization/app_en.arb
