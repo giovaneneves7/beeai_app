@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:beeai/helper/route_helper.dart';
 import 'package:beeai/util/images.dart';
 
 class StartScreen extends StatefulWidget {
@@ -30,6 +31,9 @@ class _StartScreenState extends State<StartScreen> {
             SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
+
+                Get.toNamed(RouteHelper.getOnboardingScreen());
+
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor, 

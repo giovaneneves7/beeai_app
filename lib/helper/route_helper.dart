@@ -5,17 +5,17 @@ import 'package:get/get.dart';
 class RouteHelper{
 
   static const String notification = '/notification';
-  static const String offerMap = '/offer-map';
+  static const String onboarding = '/onboarding';
 
   static String getNotificationScreen() => notification;
-  static String getOfferMapScreen() => offerMap;
+  static String getOnboardingScreen() => onboarding;
 
   // Registro de rotas [ Adicionar todas as rotas do app aqui ] 
- /* static List<GetPage> routes = [
+  static List<GetPage> routes = [
 
   	GetPage(name: notification, page: () => NotificationScreen()),
-    GetPage(name: offerMap, page: () => OfferMapScreen()),
+    GetPage(name: onboarding, page: () => OnboardingScreen()),
 
-  ];*/
+  ];
 
 }
