@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="Corre Aqui"
+        android:label="BeeAI"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
