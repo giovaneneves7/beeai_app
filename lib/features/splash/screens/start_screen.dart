@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:beeai/helper/route_helper.dart';
 import 'package:beeai/util/images.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StartScreen extends StatefulWidget {
   @override
