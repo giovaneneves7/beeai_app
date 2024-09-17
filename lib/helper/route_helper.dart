@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:beeai/features/onboarding/onboarding_screen.dart';
+import 'package:beeai/features/onboarding/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
