@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:beeai/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class RouteHelper{
   // Registro de rotas [ Adicionar todas as rotas do app aqui ] 
   static List<GetPage> routes = [
 
-  	GetPage(name: notification, page: () => NotificationScreen()),
+  	//GetPage(name: notification, page: () => NotificationScreen()),
     GetPage(name: onboarding, page: () => OnboardingScreen()),
 
   ];
