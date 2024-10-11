@@ -37,8 +37,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 });
               },
               children: [
-                OnboardingPage1(_pageController),
-                OnboardingPage2(_pageController),
+                OnboardingPage1(controller: _pageController),
+                OnboardingPage2(controller: _pageController),
               ],
             ),
           ),
