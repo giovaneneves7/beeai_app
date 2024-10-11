@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HiveDataScreen extends StatefulWidget {
   @override
@@ -7,6 +8,46 @@ class HiveDataScreen extends StatefulWidget {
 
 class _HiveDataScreenState extends State<HiveDataScreen> {
   
+  String weight = "Carregando...";
+
+  @override
+  void initState() {
+    super.initState();
+    fetchWeight(); 
+  }
+
+  Future<void> fetchWeight() async {
+    try {
+      final response = await http.get(Uri.parse('http://192.168.4.1/'));
+
+      if (response.statusCode == 200) {
+        
+        // Buscando o texto "<p>Peso: " e capturando o número logo após
+        
+        RegExp regExp = RegExp(r'Peso: (\d+\.?\d*) kg');
+        var match = regExp.firstMatch(response.body);
+        
+        if (match != null) {
+          setState(() {
+            weight = "${match.group(1)} kg";
+          });
+        } else {
+          setState(() {
+            weight = "Erro ao obter peso";
+          });
+        }
+      } else {
+        setState(() {
+          weight = "Erro na conexão";
+        });
+      }
+    } catch (e) {
+      setState(() {
+        weight = "Falha na requisição";
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,15 +56,12 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
         actions: [
           IconButton(
             icon: Icon(Icons.notifications),
-            onPressed: () {
-
-            },
+            onPressed: () {},
           ),
         ],
       ),
       body: Column(
         children: [
-
           Container(
             color: Colors.orange,
             padding: EdgeInsets.all(16),
@@ -117,7 +155,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
                           Text('Peso:'),
                           SizedBox(height: 4),
                           Text(
-                            '80kg',
+                            weight, // Aqui estamos exibindo o valor dinâmico do peso
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
