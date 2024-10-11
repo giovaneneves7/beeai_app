@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      //getPages: RouteHelper.routes,
       theme: CustomTheme.lightTheme,
       themeMode: ThemeMode.light,
       home: StartScreen(), 
+      getPages: RouteHelper.routes,
     );
   }
 }
