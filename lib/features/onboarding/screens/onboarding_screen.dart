@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:beeai/features/onboarding/screens/onboarding_screen1.dart';
-import 'package:beeai/features/onboarding/screens/onboarding_screen2.dart';
+import 'package:beeai/features/onboarding/screens/onboarding_page1.dart'; // Make sure your import paths are correct
+import 'package:beeai/features/onboarding/screens/onboarding_page2.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -8,8 +8,20 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  PageController _pageController = PageController();
+  late PageController _pageController; 
   int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose(); 
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
