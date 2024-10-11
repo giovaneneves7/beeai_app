@@ -1,3 +1,4 @@
+import 'dart:async';  // Para usar Timer
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -7,22 +8,37 @@ class HiveDataScreen extends StatefulWidget {
 }
 
 class _HiveDataScreenState extends State<HiveDataScreen> {
-  
   String weight = "Carregando...";
+  Timer? _timer; 
 
   @override
   void initState() {
     super.initState();
-    fetchWeight(); 
+    
+    // Inicializando timer para buscar o peso a cada 2 segundos
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
+      fetchWeight();
+    });
+  }
+
+  @override
+  void dispose() {
+    
+    // Cancelando timer quando o widget é destruído
+    
+    _timer?.cancel();
+    super.dispose();
   }
 
   Future<void> fetchWeight() async {
     try {
+
+      // Fazendo requisição para o ESP8266 
       final response = await http.get(Uri.parse('http://192.168.4.1/'));
 
       if (response.statusCode == 200) {
-        
-        // Buscando o texto "<p>Peso: " e capturando o número logo após
+
+        // Usamos RegExp para buscar o valor do peso no HTML retornado
         
         RegExp regExp = RegExp(r'Peso: (\d+\.?\d*) kg');
         var match = regExp.firstMatch(response.body);
@@ -155,7 +171,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
                           Text('Peso:'),
                           SizedBox(height: 4),
                           Text(
-                            weight, // Aqui estamos exibindo o valor dinâmico do peso
+                            weight, 
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
