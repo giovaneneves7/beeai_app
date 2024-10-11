@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:beeai/features/onboarding/screens/orboard_screen1.dart';
-import 'package:beeai/features/onboarding/screens/orboard_screen2.dart';
+import 'package:beeai/features/onboarding/screens/onboard_screen1.dart';
+import 'package:beeai/features/onboarding/screens/onboard_screen2.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
