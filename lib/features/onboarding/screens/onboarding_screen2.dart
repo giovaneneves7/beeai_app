@@ -1,9 +1,10 @@
+import 'package:beeai/helper/route_helper.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage2 extends StatelessWidget {
-  final PageController controller; // Add this line
+  final PageController controller; 
 
-  OnboardingPage2({required this.controller}); // Update constructor to accept a named parameter
+  OnboardingPage2({required this.controller}); 
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,9 @@ class OnboardingPage2 extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              // Ação quando finaliza o onboarding
+              
+              Get.toNamed(RouteHelper.getHomeScreen());
+
             },
             child: Text("Próximo >"),
           ),
