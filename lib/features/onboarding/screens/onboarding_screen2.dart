@@ -1,5 +1,6 @@
 import 'package:beeai/helper/route_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnboardingPage2 extends StatelessWidget {
   final PageController controller; 
