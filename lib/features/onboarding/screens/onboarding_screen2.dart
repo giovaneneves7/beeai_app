@@ -31,7 +31,7 @@ class OnboardingPage2 extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               
-              Get.toNamed(RouteHelper.getHomeScreen());
+              Get.toNamed(RouteHelper.getHiveDataScreen());
 
             },
             child: Text("Próximo >"),
