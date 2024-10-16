@@ -44,7 +44,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
         // Usamos RegExp para buscar o valor do peso no HTML retornado
         
         RegExp regExp = RegExp(r'Peso: (\d+\.?\d*) kg');
-        RegExp tempExp = RegExp(r'Temperatura: (\d+\.?\d*) °C');
+        RegExp tempExp = RegExp(r'Temperatura: (\d+\.?\d*)\s*°C');
 
         var match = regExp.firstMatch(response.body);
         var tempMatch = tempExp.firstMatch(response.body);
