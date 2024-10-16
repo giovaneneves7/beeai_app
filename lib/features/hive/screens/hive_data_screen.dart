@@ -8,7 +8,10 @@ class HiveDataScreen extends StatefulWidget {
 }
 
 class _HiveDataScreenState extends State<HiveDataScreen> {
+  
   String weight = "Carregando...";
+  String temperature = "Carregando...";
+
   Timer? _timer; 
 
   @override
@@ -41,7 +44,10 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
         // Usamos RegExp para buscar o valor do peso no HTML retornado
         
         RegExp regExp = RegExp(r'Peso: (\d+\.?\d*) kg');
+        RegExp tempExp = RegExp(r'Temperatura: (\d+\.?\d*) °C');
+
         var match = regExp.firstMatch(response.body);
+        var tempMatch = tempExp.firstMatch(response.body);
         
         if (match != null) {
           setState(() {
@@ -52,6 +58,17 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
             weight = "Erro ao obter peso";
           });
         }
+
+        if(tempMatch != null){
+          
+          temperature = "${tempMatch.group(1)} °C";
+        
+        } else{
+
+          temperature = "Erro ao obter a temperatura!";
+
+        }
+
       } else {
         setState(() {
           weight = "Erro na conexão";
@@ -158,7 +175,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
                           Text('Temperatura:'),
                           SizedBox(height: 4),
                           Text(
-                            '29°C',
+                            temperature,
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
