@@ -1,4 +1,5 @@
 import 'dart:async';  // Para usar Timer
+import 'dart:convert';  // Importar para usar jsonDecode
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -33,53 +34,36 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
     super.dispose();
   }
 
-  Future<void> fetchWeight() async {
-    try {
 
-      // Fazendo requisição para o ESP8266 
+  Future<void> fetchWeight() async {
+    
+    try {
+      // Fazendo requisição para o ESP8266
       final response = await http.get(Uri.parse('http://192.168.4.1/'));
 
       if (response.statusCode == 200) {
-
-        // Usamos RegExp para buscar o valor do peso no HTML retornado
+        // Decodificando a resposta JSON
+        Map<String, dynamic> data = jsonDecode(response.body);
         
-        RegExp regExp = RegExp(r'Peso: (\d+\.?\d*) kg');
-        RegExp tempExp = RegExp(r'Temperatura:\s*(\d+\.?\d*)\s*°C');
-
-        var match = regExp.firstMatch(response.body);
-        var tempMatch = tempExp.firstMatch(response.body);
-        
-        if (match != null) {
-          setState(() {
-            weight = "${match.group(1)} kg";
-          });
-        } else {
-          setState(() {
-            weight = "Erro ao obter peso";
-          });
-        }
-
-        if(tempMatch != null){
-          
-          temperature = "${tempMatch.group(1)} °C";
-        
-        } else{
-
-          temperature = "Erro ao obter a temperatura!";
-
-        }
-
+        // Extraindo peso e temperatura do JSON
+        setState(() {
+          weight = "${data['peso']} kg";
+          temperature = "${data['temperatura']} °C";
+        });
       } else {
         setState(() {
           weight = "Erro na conexão";
+          temperature = "Erro na conexão"; // Atualizando também a temperatura
         });
       }
     } catch (e) {
       setState(() {
         weight = "Falha na requisição";
+        temperature = "Falha na requisição"; // Atualizando também a temperatura
       });
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
