@@ -9,22 +9,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
     HiveDataScreen(),
-    MapScreen()
+    MapScreen(),
   ];
 
-  void _onItemTapped(int index){
-
+  void _onItemTapped(int index) {
     setState(() {
-      
       _currentIndex = index;
-
     });
-
   }
 
   @override
@@ -35,8 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
       ),
-      ),
     );
   }
-
 }
