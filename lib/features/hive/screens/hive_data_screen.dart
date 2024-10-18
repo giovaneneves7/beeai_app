@@ -39,7 +39,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
     
     try {
       // Fazendo requisição para o ESP8266
-      final response = await http.get(Uri.parse('http://192.168.4.1/'));
+      final response = await http.get(Uri.parse('http://192.168.4.1/getDados'));
 
       if (response.statusCode == 200) {
         // Decodificando a resposta JSON
