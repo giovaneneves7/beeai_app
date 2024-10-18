@@ -52,14 +52,14 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
         });
       } else {
         setState(() {
-          weight = "Erro na conexão";
-          temperature = "Erro na conexão"; // Atualizando também a temperatura
+          weight = "Erro!";
+          temperature = "Erro!"; // Atualizando também a temperatura
         });
       }
     } catch (e) {
       setState(() {
-        weight = "Falha na requisição";
-        temperature = "Falha na requisição"; // Atualizando também a temperatura
+        weight = "Erro!";
+        temperature = "Erro!"; // Atualizando também a temperatura
       });
     }
   }
