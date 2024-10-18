@@ -33,25 +33,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
             ),
             onPressed: () => onTap(1),
           ),
-          SizedBox(width: 48), 
-          IconButton(
-            icon: Icon(
-              Icons.favorite,
-              color: currentIndex == 3
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).iconTheme.color,
-            ),
-            onPressed: () => onTap(3),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.person,
-              color: currentIndex == 4
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).iconTheme.color,
-            ),
-            onPressed: () => onTap(4),
-          ),
         ],
       ),
     );

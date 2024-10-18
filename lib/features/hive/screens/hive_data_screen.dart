@@ -1,5 +1,6 @@
-import 'dart:async';  // Para usar Timer
-import 'dart:convert';  // Importar para usar jsonDecode
+import 'dart:async';  
+import 'dart:convert';  
+import 'package:beeai/common/widgets/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -195,6 +196,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
