@@ -14,17 +14,14 @@ class _MapScreenState extends State<MapScreen> {
       body: Stack(
         children: [
           FlutterMap(
-            options: MapOptions(
-              // Altere 'center' para 'startCenter'
-              initialCenter: LatLng(-11.299, -41.8568), // Corrija os valores de latitude e longitude
-              zoom: 3.2,
-            ),
-            children: [
-              TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                userAgentPackageName: 'com.example.app',
-              ),
-            ],
+                  options: const MapOptions(),
+                  children: [
+                    TileLayer(
+                      urlTemplate:
+                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                      userAgentPackageName: 'com.example.app',
+                    ),
+                    ],
           ),
         ],
       ),
