@@ -196,7 +196,6 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
