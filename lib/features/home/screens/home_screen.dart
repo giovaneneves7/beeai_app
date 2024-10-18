@@ -12,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
 
-  final <Widget> _screens = [
+  final List<Widget> _screens = [
     HiveDataScreen(),
     MapScreen()
   ];
