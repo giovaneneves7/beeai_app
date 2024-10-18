@@ -12,6 +12,8 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
   
   String weight = "Carregando...";
   String temperature = "Carregando...";
+  String latitude = "Carregando...";
+  String longitude = "Carregando...";
 
   Timer? _timer; 
 
@@ -49,11 +51,16 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
         setState(() {
           weight = "${data['peso']} kg";
           temperature = "${data['temperatura']} °C";
+          latitude = "${data['latitude']}";
+          longitude = "${data['longitude']}";
+
         });
       } else {
         setState(() {
           weight = "Erro!";
-          temperature = "Erro!"; // Atualizando também a temperatura
+          temperature = "Erro!"; 
+          latitude = "Erro!";
+          longitude = "Erro!";
         });
       }
     } catch (e) {
@@ -120,7 +127,7 @@ class _HiveDataScreenState extends State<HiveDataScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     Text(
-                      '6.66719, -14.98771',
+                      '${latitude}, ${longitude}',
                       style: TextStyle(color: Colors.white),
                     ),
                   ],
