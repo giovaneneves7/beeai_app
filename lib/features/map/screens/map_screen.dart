@@ -16,7 +16,7 @@ class _MapScreenState extends State<MapScreen> {
           FlutterMap(
             options: MapOptions(
               // Altere 'center' para 'startCenter'
-              startCenter: LatLng(-11.299, -41.8568), // Corrija os valores de latitude e longitude
+              initialCenter: LatLng(-11.299, -41.8568), // Corrija os valores de latitude e longitude
               zoom: 3.2,
             ),
             children: [
