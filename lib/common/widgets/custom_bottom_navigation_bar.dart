@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-
   final int currentIndex;
   final Function(int) onTap;
 
@@ -29,7 +28,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Icon(
               Icons.event_note,
               color: currentIndex == 1
-                  ? Theme.of(context).primaryColor 
+                  ? Theme.of(context).primaryColor
                   : Theme.of(context).iconTheme.color,
             ),
             onPressed: () => onTap(1),
