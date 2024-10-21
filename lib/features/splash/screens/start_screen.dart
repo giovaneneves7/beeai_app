@@ -24,24 +24,24 @@ class _StartScreenState extends State<StartScreen> {
             SizedBox(height: 20),
             Text(
               'BEE.AI',
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: Theme.of(context).textTheme.headline6?.color,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: Theme.of(context).textTheme.headlineSmall?.color,
                     fontWeight: FontWeight.bold,
                   ),
             ),
+
             SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-
                 Get.toNamed(RouteHelper.getOnboardingScreen());
-
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor, 
-                foregroundColor: Theme.of(context).textTheme.button?.color, 
+                foregroundColor: Theme.of(context).textTheme.labelLarge?.color, 
               ),
               child: Text('ENTRAR'),
             ),
+
           ],
         ),
       ),
