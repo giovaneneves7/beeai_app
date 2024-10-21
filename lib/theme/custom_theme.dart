@@ -32,10 +32,11 @@ class CustomTheme {
   // Método para o TextTheme
   static TextTheme _textTheme(Color color) {
     return TextTheme(
-      bodyText1: TextStyle(color: color),
-      bodyText2: TextStyle(color: color),
+      bodyLarge: TextStyle(color: color),
+      bodyMedium: TextStyle(color: color),
     );
   }
+
 
   // Método para o ElevatedButtonThemeData
   static ElevatedButtonThemeData _elevatedButtonTheme(
