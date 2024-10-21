@@ -14,14 +14,30 @@ class _MapScreenState extends State<MapScreen> {
       body: Stack(
         children: [
           FlutterMap(
-                  options: const MapOptions(),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      userAgentPackageName: 'com.example.app',
+            options: const MapOptions(
+              center: LatLng(-11.327153, -41.864476), // Centraliza o mapa no local desejado
+              zoom: 13.0, // Define o nível de zoom
+            ),
+            children: [
+              TileLayer(
+                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                userAgentPackageName: 'com.example.app',
+              ),
+              MarkerLayer(
+                markers: [
+                  Marker(
+                    width: 80.0,
+                    height: 80.0,
+                    point: LatLng(-11.327153, -41.864476),
+                    builder: (ctx) => Icon(
+                      Icons.location_pin,
+                      color: Colors.red,
+                      size: 40.0,
                     ),
-                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),
