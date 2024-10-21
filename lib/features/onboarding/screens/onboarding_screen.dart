@@ -61,11 +61,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: _currentIndex == index
-                ? theme.textTheme.bodyText1!.color
-                : theme.textTheme.bodyText1!.color!.withOpacity(0.4),
+                ? theme.textTheme.bodyLarge!.color
+                : theme.textTheme.bodyLarge!.color!.withOpacity(0.4),
           ),
         );
       }),
     );
   }
+
 }
