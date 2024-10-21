@@ -22,9 +22,10 @@ class OnboardingPage1 extends StatelessWidget {
           SizedBox(height: 20),
           Text(
             "Bem-Vindo Ao Sistema De Monitoramento De Colmeias",
-            style: theme.textTheme.bodyText1!.copyWith(fontSize: 24),
+            style: theme.textTheme.bodyLarge!.copyWith(fontSize: 24),
             textAlign: TextAlign.center,
           ),
+
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
