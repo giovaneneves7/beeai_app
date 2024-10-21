@@ -24,15 +24,6 @@ class _MapScreenState extends State<MapScreen> {
           // And many more recommended properties!
         ),
         CurrentLocationLayer(),
-        RichAttributionWidget( // Include a stylish prebuilt attribution widget that meets all requirments
-          attributions: [
-            TextSourceAttribution(
-              'OpenStreetMap contributors',
-              onTap: () => launchUrl(Uri.parse('https://openstreetmap.org/copyright')), // (external)
-            ),
-            // Also add images...
-          ],
-        ),
       ],
     );
   }
