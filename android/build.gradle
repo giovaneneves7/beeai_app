@@ -1,11 +1,19 @@
-allprojects {
-    ext.kotlin_version = "2.0.21" 
+buildscript {
+    ext.kotlin_version = "2.0.21" // Use uma versão estável do Kotlin
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // outras dependências, se necessário
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 
